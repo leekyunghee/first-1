@@ -26,7 +26,7 @@ var UserListView = Backbone.View.extend({
 		this.listenTo(Users, 'all', this.render);
 	},
 	render : function() {
-		Users.fetch();
+		//Users.fetch();
 	},
 	addOne : function(user) {
 		console.log("UserListView.addOne");
@@ -43,8 +43,6 @@ var UserListView = Backbone.View.extend({
 
 var UserList = new UserListView;
 
-console.log("test start");
-
 console.log("user add");
 var user1 = new User({id: 'idess111', firstName:'yanggon', lastName:'moon', email:'aaa'});
 Users.add(user1);
@@ -53,5 +51,3 @@ Users.add(user2);
 var user3 = new User({id: 'idess333', firstName:'yanggon', lastName:'moon', email:'aaa'});
 Users.add(user3);
 console.log("user add end");
-
-console.log("test end");
