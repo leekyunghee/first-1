@@ -11,6 +11,9 @@ var UserView = Backbone.View.extend({
 	render : function() {
 		this.$el.html(this.template(this.model.toJSON()));
 		return this;
+	},
+	events : {
+		
 	}
 });
 
@@ -23,23 +26,32 @@ var UserListView = Backbone.View.extend({
 		this.listenTo(Users, 'all', this.render);
 	},
 	render : function() {
-
+		Users.fetch();
 	},
-	addOne : function() {
+	addOne : function(user) {
 		console.log("UserListView.addOne");
 		var userView = new UserView({model:user});
 		this.$("#user-list").append(userView.render().el);
 	},
 	addAll : function() {
 		Users.each(this.addOne, this);
+	},
+	events : {
+		
 	}
 });
 
-console.log("test start");
 var UserList = new UserListView;
-var user = new User({id: 'idess', firstName:'yanggon', lastName:'moon', email:'aaa'});
+
+console.log("test start");
+
 console.log("user add");
-Users.add(user);
+var user1 = new User({id: 'idess111', firstName:'yanggon', lastName:'moon', email:'aaa'});
+Users.add(user1);
+var user2 = new User({id: 'idess', firstName:'yanggon', lastName:'moon', email:'aaa'});
+Users.add(user2);
+var user3 = new User({id: 'idess333', firstName:'yanggon', lastName:'moon', email:'aaa'});
+Users.add(user3);
 console.log("user add end");
 
 console.log("test end");
