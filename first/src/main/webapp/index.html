@@ -96,13 +96,13 @@
 
 				<h2 class="sub-header">Section title</h2>
 				<div id="userapp" class="table-responsive">
-					<table class="table table-striped">
+					<table class="table table-striped" style="display:;">
 						<thead>
 							<tr>
 								<th>id</th>
-								<th>first name</th>
-								<th>last name</th>
+								<th>name</th>
 								<th>email</th>
+								<th>regdate</th>
 							</tr>
 						</thead>
 						<tbody id="user-list">
@@ -121,10 +121,10 @@
 	
 	<!-- templates -->
 	<script type="text/template" id="user-template">
-<td><%=id %></td>
-<td><%=firstName %></td>
-<td><%=lastName %></td>
-<td><%=email %></td>
+		<td><%= id %></td>
+		<td><%= name %></td>
+		<td><%= email %></td>
+		<td><%= regdate %></td>
 	</script>
 	
 	<script type="text/javascript" src="resources/bootstrap/js/bootstrap.js"></script>
