@@ -25,7 +25,7 @@ var UserListView = Backbone.View.extend({
 		console.log("EmpListView render()");
 		this.$el.html('');
 		this.collection.refreshData();
-		this.collection.each(function(emp){
+		this.collection.each(function(user){
 			var userView = new UserView({model: user});
 			this.$el.append(userView.render().el);
 		}, this);
