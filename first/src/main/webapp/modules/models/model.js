@@ -1,22 +1,52 @@
 /**
- * 
+ * 모델 
  */
-var User = Backbone.Model.extend({
-// url : "",
-	// Default attributes for the user item.
-	defaults : {
-		id : '',
-		firstName : '',
-		lastName : '',
-		email : ''
-	}
-});
+function() { 
+	var User = Backbone.Model.extend({
+	// urlRoot : '',
+	// 모델 객체의 기본값을 지정
+		defaults : {
+			id : '',
+			name : '',
+			email : '',
+			regdate : ''
+		},
+		initialize: function(){
+			console.log("Model initialize()");
+		}
+	});
 
-var UserList = Backbone.Collection.extend({
-	// Reference to this collection's model.
-	model : User,
-	// Save all of the user items under the `"user-backbone"` namespace.
-	localStorage : new Backbone.LocalStorage("user-backbone")
-});
+	var UserCollection = Backbone.Collection.extend({
+		// url : '',
+		// 모델을 콜렉션에서 선언 
+		model : User,
+		url : '',
+		initialize: function(){
+			console.log("EmpCollection initialize()");
+		},
+		refreshData : function(param) {
+			var p = param || {};
+			this.fetch({
+				url: this.url,
+				async: false,
+				data: JSON.stringify(p),
+				type:        'POST',
+				dataType:    'json',
+				contentType: 'application/json',
+				cache:       false,
+				success:     this.success,
+				error:       this.error,
+				reset:		 true
+	        });	
+		},
+		success: function(data) {
+			userCollection.reset();
+			userCollection.set(data);
+		},
+		error: function(error){
+			console.log("error = "+error);
+		}
+	});
 
-var Users = new UserList;
+	var userCollection = new UserCollection();
+})();
