@@ -40,7 +40,7 @@ var userListView = new UserListView({collection: userCollection});
 
 var UserRouter = Backbone.Router.extend({
 	initialize: function(){
-		console.log("EmpRouter  initialize()");
+		console.log("UserRouter  initialize()");
 	},
 	routes: {
 		'user/selectUserList': 'selectUserList'
