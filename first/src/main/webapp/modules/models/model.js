@@ -24,13 +24,14 @@ function() {
 		initialize: function(){
 			console.log("EmpCollection initialize()");
 		},
+		// 조회 데이터 요청
 		refreshData : function(param) {
 			var p = param || {};
 			this.fetch({
 				url: this.url,
 				async: false,
 				data: JSON.stringify(p),
-				type:        'POST',
+				type:        'POST',			// fetch는 backbone에서 GET방식 이므로 재정의 
 				dataType:    'json',
 				contentType: 'application/json',
 				cache:       false,
