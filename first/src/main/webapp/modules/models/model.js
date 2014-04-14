@@ -37,7 +37,7 @@ function() {
 				cache:       false,
 				success:     this.success,
 				error:       this.error,
-				reset:		 true
+				reset:	true
 	        });	
 		},
 		success: function(data) {
