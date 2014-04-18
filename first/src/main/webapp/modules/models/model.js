@@ -1,7 +1,8 @@
-/**
- * 모델 
- */
+
 function() { 
+	/**
+	 * Model 
+	 */
 	var User = Backbone.Model.extend({
 	// urlRoot : '',
 	// 모델 객체의 기본값을 지정
@@ -15,7 +16,9 @@ function() {
 			console.log("Model initialize()");
 		}
 	});
-
+	/**
+	 * Collection 
+	 */
 	var UserCollection = Backbone.Collection.extend({
 		
 		model : User,
