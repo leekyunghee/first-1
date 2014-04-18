@@ -1,6 +1,7 @@
 /**
- * 뷰 
- */
+* View
+*/
+
 var UserView = Backbone.View.extend({
 	tagName : 'tr',
 	template : _.template($('#user-template').html()),
