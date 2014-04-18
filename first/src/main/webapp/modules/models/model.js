@@ -17,10 +17,9 @@ function() {
 	});
 
 	var UserCollection = Backbone.Collection.extend({
-		// url : '',
-		// 모델을 콜렉션에서 선언 
+		
 		model : User,
-		url : '',
+		url: '/employee/addEmployee',
 		initialize: function(){
 			console.log("EmpCollection initialize()");
 		},
@@ -31,7 +30,7 @@ function() {
 				url: this.url,
 				async: false,
 				data: JSON.stringify(p),
-				type:        'POST',			// fetch는 backbone에서 GET방식 이므로 재정의 
+				type:        'POST',		// fetch는 backbone에서 GET방식 이므로 재정의 
 				dataType:    'json',
 				contentType: 'application/json',
 				cache:       false,
