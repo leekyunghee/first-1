@@ -37,8 +37,9 @@
 			}, this);
 			return this;
 		},
+		// 이벤트 핸들러 등록
 		events : {
-			
+		// {'eventName selector': 'callbackFunction'} 형태 
 		}
 	});
 
