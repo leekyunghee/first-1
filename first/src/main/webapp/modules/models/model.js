@@ -1,5 +1,4 @@
-
-function() { 
+(function($) { 
 	/**
 	 * Model 
 	 */
@@ -52,4 +51,4 @@ function() {
 	});
 
 	var userCollection = new UserCollection();
-})();
+})(jQuery);
