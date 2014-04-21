@@ -1,17 +1,21 @@
 (function($){
 
 var UserView = Backbone.View.extend({
+	// 타겟 지정 
 	tagName : 'tr',
+	// 템플릿 선언 
 	template : _.template($('#user-template').html()),
+	// 초기화 
 	initialize : function() {
 		console.log("UserView initialize");
 	},
 	render : function() {
-		this.$el.html(this.template(this.model.toJSON()));
+		this.$el.html(this.template(this.model.toJSON())); // 자신의 속성의 값들을 복제 해서 리턴
 		return this;
 	},
+	// 이벤트 핸들러 등록
 	events : {
-		
+	// {'eventName selector': 'callbackFunction'} 형태 
 	}
 });
 
