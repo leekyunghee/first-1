@@ -32,7 +32,7 @@
 				url: this.url,
 				async: false,
 				data: JSON.stringify(p),
-				type:        'POST',		// fetch는 backbone에서 GET방식 이므로 재정의 
+				type:        'POST',		
 				dataType:    'json',
 				contentType: 'application/json',
 				cache:       false,
