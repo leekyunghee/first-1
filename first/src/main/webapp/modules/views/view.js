@@ -1,6 +1,4 @@
-/**
-* View
-*/
+(function($){
 
 var UserView = Backbone.View.extend({
 	tagName : 'tr',
@@ -54,3 +52,4 @@ var UserRouter = Backbone.Router.extend({
 
 	new UserRouter();
 	Backbone.history.start();
+})(jQuery);
