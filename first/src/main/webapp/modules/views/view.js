@@ -7,20 +7,22 @@
 		tagName : 'tr',
 		// 템플릿 선언 
 		template : _.template($('#user-template').html()),
+		// 이벤트 핸들러 등록
+		events : {
+		// {'eventName selector': 'callbackFunction'} 형태 
+		},
 		// 초기화 
 		initialize : function() {
 			console.log("UserView initialize");
+			this.listenTo(this.model, 'change', this.render);	
 		},
 
 		render : function() {
 			// 모델의 속성 값들을 복제 해서 리턴 : 템플릿에 담는다
 			this.$el.html(this.template(this.model.toJSON())); 
 			return this;
-		},
-		// 이벤트 핸들러 등록
-		events : {
-		// {'eventName selector': 'callbackFunction'} 형태 
 		}
+
 	});
 	
 	/**
@@ -32,17 +34,28 @@
 		// 초기화 
 		initialize : function() {
 			console.log("UserListView initialize");
-			this.render();
+			this.listenTo(Users, 'add', this.addOne);
+			this.listenTo(Users, 'reset', this.addAll);
+			this.listenTo(Users, 'all', this.render);
+			Users.fetch();
 		},
 
 		render : function() {
 			console.log("EmpListView render()");
 			this.$el.html('');
-			this.collection.each(function(user){
-				var userView = new UserView({model: user});
-				this.$el.append(userView.render().el);
-			}, this);
-			return this;
+			// this.collection.each(function(user){
+			// 	var userView = new UserView({model: user});
+			// 	this.$el.append(userView.render().el);
+			// }, this);
+			// return this;
+		},
+		addOne : function(user) {
+			console.log("UserListView.addOne");
+			var userView = new UserView({model:user});
+			this.$("#user-list tbody").append(userView.render().el);
+		},
+		addAll : function() {
+			Users.each(this.addOne, this);
 		},
 		// 이벤트 핸들러 등록
 		events : {
