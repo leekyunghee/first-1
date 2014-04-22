@@ -38,7 +38,7 @@
 	window.module = {};
 	window.module.model = {};
 	window.module.collection = {};
-	window.module.model.EmpModel = EmpModel;
-	window.module.collection.EmpCollection = EmpCollection;
+	window.module.model.User = User;
+	window.module.collection.UserCollection = UserCollection;
 	
 })(jQuery);
