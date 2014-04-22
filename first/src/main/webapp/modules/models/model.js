@@ -33,11 +33,12 @@
 	});
 	// 콜렉션 객체 생성 
 	var userCollection = new UserCollection();
+	
+	// 네임스페이스 패턴 사용 
+	window.module = {};
+	window.module.model = {};
+	window.module.collection = {};
+	window.module.model.EmpModel = EmpModel;
+	window.module.collection.EmpCollection = EmpCollection;
+	
 })(jQuery);
-
-// 네임스페이스 패턴 사용 
-window.module = {};
-window.module.model = {};
-window.module.collection = {};
-window.module.model.EmpModel = EmpModel;
-window.module.collection.EmpCollection = EmpCollection;
