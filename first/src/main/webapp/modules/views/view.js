@@ -2,7 +2,6 @@
 	/**
 	 * Model 
 	 */
-
 	var UserView = Backbone.View.extend({
 		// 타겟 지정 
 		tagName : 'tr',
