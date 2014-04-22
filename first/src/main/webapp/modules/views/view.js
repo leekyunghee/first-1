@@ -44,7 +44,10 @@
 
 	// 뷰 객체 생성  
 	var userListView = new UserListView({collection: userCollection});
-
+	
+	/**
+	 * Router  
+	 */
 	var UserRouter = Backbone.Router.extend({
 		initialize: function(){
 			console.log("UserRouter  initialize()");
