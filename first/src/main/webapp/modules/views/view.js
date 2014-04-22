@@ -1,6 +1,6 @@
 (function($){
 	/**
-	 * 1개의 모델과 매칭 : 하나의 row template을 컨트롤 함 
+	 * 1개의 모델과 매칭 : 1개의 row template을 컨트롤 함 
 	 */
 	var UserView = Backbone.View.extend({
 		// 반복되는 엘리먼트의 tagName을 변경할 때는 필수로 선언해야함 
