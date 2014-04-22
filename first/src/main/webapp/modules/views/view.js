@@ -12,7 +12,8 @@
 			console.log("UserView initialize");
 		},
 		render : function() {
-			this.$el.html(this.template(this.model.toJSON())); // 자신의 속성의 값들을 복제 해서 리턴
+			// 모델의 속성의 값들을 복제 해서 리턴 : 템플릿에 담는다
+			this.$el.html(this.template(this.model.toJSON())); 
 			return this;
 		},
 		// 이벤트 핸들러 등록
