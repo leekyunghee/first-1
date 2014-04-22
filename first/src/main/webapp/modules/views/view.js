@@ -4,7 +4,7 @@
 	 */
 
 	var UserView = Backbone.View.extend({
-	// 타겟 지정 
+		// 타겟 지정 
 		tagName : 'tr',
 		// 템플릿 선언 
 		template : _.template($('#user-template').html()),
