@@ -4,6 +4,8 @@
 	 */
 	var UserView = Backbone.View.extend({
 		// 타겟 지정 
+		// 기본값은 : div 
+		// 반복되는 엘리먼트의 tagName을 변경할 때는 필수로 선언해야함 
 		tagName : 'tr',
 		// 템플릿 선언 
 		template : _.template($('#user-template').html()),
@@ -11,8 +13,9 @@
 		initialize : function() {
 			console.log("UserView initialize");
 		},
+		// 화면 그리는 함수 
 		render : function() {
-			// 모델의 속성의 값들을 복제 해서 리턴 : 템플릿에 담는다
+			// 모델의 속성 값들을 복제 해서 리턴 : 템플릿에 담는다
 			this.$el.html(this.template(this.model.toJSON())); 
 			return this;
 		},
@@ -23,10 +26,14 @@
 	});
 
 	var UserListView = Backbone.View.extend({
+		// 엘리먼트 : HTML의 Element에 View를 정의하기 위함
 		el: $("#userapp"),
+		// 초기화 
 		initialize : function() {
 			console.log("UserListView initialize");
+			this.render();
 		},
+		// 화면 그리는 함수 
 		render : function() {
 			console.log("EmpListView render()");
 			this.$el.html('');
