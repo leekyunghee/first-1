@@ -33,10 +33,13 @@
 		el: $("#userapp"),
 		// 초기화 
 		initialize : function() {
+			// 입력값이 있을 경우 
+			//this.$input = this.$('#new-user');
 			console.log("UserListView initialize");
 			this.listenTo(Users, 'add', this.addOne);
 			this.listenTo(Users, 'reset', this.addAll);
 			this.listenTo(Users, 'all', this.render);
+			// 데이터 조회  
 			Users.fetch();
 		},
 
@@ -55,6 +58,8 @@
 			this.$("#user-list tbody").append(userView.render().el);
 		},
 		addAll : function() {
+			// 초기화 
+			this.$('#user-list').html('');
 			Users.each(this.addOne, this);
 		},
 		// 이벤트 핸들러 등록
