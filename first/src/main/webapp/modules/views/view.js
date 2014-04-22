@@ -36,7 +36,6 @@
 		render : function() {
 			console.log("EmpListView render()");
 			this.$el.html('');
-			this.collection.refreshData();
 			this.collection.each(function(user){
 				var userView = new UserView({model: user});
 				this.$el.append(userView.render().el);
