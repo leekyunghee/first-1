@@ -45,12 +45,14 @@
 
 		render : function() {
 			console.log("EmpListView render()");
-			this.$el.html('');
+			//this.$el.html('');
 			// this.collection.each(function(user){
 			// 	var userView = new UserView({model: user});
 			// 	this.$el.append(userView.render().el);
 			// }, this);
 			// return this;
+			
+			// 조회가 끝난 후 화면 refresh추가 
 		},
 		addOne : function(user) {
 			console.log("UserListView.addOne");
