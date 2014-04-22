@@ -25,7 +25,7 @@
 		// 모델 객체를 참조 
 		model : User,
 		// API URL
-		url: '/employee/addEmployee',
+		url: '/account/',
 		// 초기화 
 		initialize: function(){
 			console.log("EmpCollection initialize()");
