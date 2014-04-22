@@ -39,7 +39,7 @@
 			this.listenTo(Users, 'add', this.addOne);
 			this.listenTo(Users, 'reset', this.addAll);
 			this.listenTo(Users, 'all', this.render);
-			// 데이터 조회  
+			// 서버로부터 데이터(read (GET)) 조회  
 			Users.fetch();
 		},
 
