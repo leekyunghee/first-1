@@ -1,3 +1,5 @@
+// 조회 페이지_Model 
+
 (function($) {
 	/**
 	 * Model 
