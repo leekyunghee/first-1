@@ -36,8 +36,8 @@
 })(jQuery);
 
 // 네임스페이스 패턴 사용 
-	window.module = {};
-	window.module.model = {};
-	window.module.collection = {};
-	window.module.model.EmpModel = EmpModel;
-	window.module.collection.EmpCollection = EmpCollection;
+window.module = {};
+window.module.model = {};
+window.module.collection = {};
+window.module.model.EmpModel = EmpModel;
+window.module.collection.EmpCollection = EmpCollection;
