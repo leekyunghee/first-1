@@ -3,7 +3,6 @@
 	 * View 
 	 */
 	var UserView = Backbone.View.extend({
-		// 타겟 지정 
 		// 기본값은 : div 
 		// 반복되는 엘리먼트의 tagName을 변경할 때는 필수로 선언해야함 
 		tagName : 'tr',
