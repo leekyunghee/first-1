@@ -23,9 +23,9 @@
 	 * Collection 
 	 */
 	var UserCollection = Backbone.Collection.extend({
-		// 모델 
+		// 모델 객체를 참조 
 		model : User,
-		// url 
+		// API URL
 		url: '/employee/addEmployee',
 		// 초기화 
 		initialize: function(){
