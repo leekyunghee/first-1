@@ -1,5 +1,5 @@
+// 전역변수 선언 
 (function($) {
-var 	
 	/**
 	 * Model 
 	 */
