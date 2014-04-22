@@ -1,6 +1,6 @@
 (function($){
 	/**
-	 * Model 
+	 * View 
 	 */
 	var UserView = Backbone.View.extend({
 		// 타겟 지정 
@@ -59,4 +59,11 @@
 
 		new UserRouter();
 		Backbone.history.start();
+		
+	// 네임스페이스 패턴 사용 
+	window.module = {};
+	window.module.view = {};
+	window.module.view.UserView = UserView;
+	window.module.view.UserListView = UserListView;	
+	
 })(jQuery);
