@@ -42,6 +42,7 @@
 		}
 	});
 
+	// 뷰 객체 생성  
 	var userListView = new UserListView({collection: userCollection});
 
 	var UserRouter = Backbone.Router.extend({
