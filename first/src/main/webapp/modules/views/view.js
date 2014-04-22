@@ -1,9 +1,8 @@
 (function($){
 	/**
-	 * View 
+	 * 1개의 모델과 매칭 : 하나의 row template을 컨트롤 함 
 	 */
 	var UserView = Backbone.View.extend({
-		// 기본값은 : div 
 		// 반복되는 엘리먼트의 tagName을 변경할 때는 필수로 선언해야함 
 		tagName : 'tr',
 		// 템플릿 선언 
@@ -23,7 +22,10 @@
 		// {'eventName selector': 'callbackFunction'} 형태 
 		}
 	});
-
+	
+	/**
+	 * 전체 레이아웃을 컨트롤 하는 UserListView 
+	 */
 	var UserListView = Backbone.View.extend({
 		// 엘리먼트 : HTML의 Element에 View를 정의하기 위함
 		el: $("#userapp"),
