@@ -11,6 +11,8 @@
 			email : '',
 			regdate : ''
 		},
+		// id (PK) 값 선언 
+		idAttribute : '', 
 		initialize: function(){
 			console.log("Model initialize()");
 		}
@@ -24,31 +26,8 @@
 		url: '/employee/addEmployee',
 		initialize: function(){
 			console.log("EmpCollection initialize()");
-		},
-		// 조회 데이터 요청
-		refreshData : function(param) {
-			var p = param || {};
-			this.fetch({
-				url: this.url,
-				async: false,
-				data: JSON.stringify(p),
-				type:        'POST',		
-				dataType:    'json',
-				contentType: 'application/json',
-				cache:       false,
-				success:     this.success,
-				error:       this.error,
-				reset:	true
-	        });	
-		},
-		success: function(data) {
-			userCollection.reset();
-			userCollection.set(data);
-		},
-		error: function(error){
-			console.log("error = "+error);
 		}
 	});
-
+	// 콜렉션 객체 생성 
 	var userCollection = new UserCollection();
 })(jQuery);
