@@ -11,7 +11,7 @@
 			email : '',
 			regdate : ''
 		},
-		// id(PK)값 선언 : 모델을 동적으로 수정하기 위함 
+		// id(PK)값 선언 : 모델을 동적으로 수정하기 위함(insert, update시 필요) 
 		idAttribute : '', 
 		// 초기화 
 		initialize: function(){
